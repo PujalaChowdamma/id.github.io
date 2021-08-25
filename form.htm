@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script type="text/javascript"> var submitted=false;</script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"
+        onload="if(submitted) {window.location='https://www.google.com';}"></iframe>
+        
+        <section>
+            <h1>Let's Do It</h1>
+            <div class="container">
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc11dFFohlGVPej5HU1q6WrPZLoHq8Z2KS47nYdlaRegOAfvQ/formResponse" method="POST">
+                 
+            
+            <div class="form-group">
+                <label for="Account Name">Account Name</label>
+                <input type="text" id="Account Name" name="entry.1038868977" placeholder="Enter your Account Name">
+            </div>     
+
+            <div class="form-group">
+                <label for="Project Name">Project Name</label>
+                <input type="text" id="Project Name" name="entry.111542062">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="entry.1755559680">
+            </div>  
+            
+            <div class="form-group">
+                <label for="category">Category</label><br>
+                <select name="entry.1971792433">
+                
+                    <option value="Process">Process</option>
+                    <option value="Automation" selected>Automation</option>
+                    <option value="Productivity">Productivity</option>
+               
+                </select>
+            </div>
+          
+
+            <div class="form-group">
+                <label for="message">Description Of The Idea</label>
+                <textarea name="entry.1336341925" cols="30" rows="3" required></textarea>
+            </div>     
+
+            <div class="form-group">
+                <label for="content">Expected Benefits</label>
+                <textarea name="entry.1978521043" cols="30" rows="3"></textarea>
+            </div>   
+           
+
+            <p>Is This Customer Intellectual Property</p>
+            <input type="radio" id="Yes" name="category" value="YES">
+            <label for="Yes">Yes</label><br>
+
+            <input type="radio" id="No" name="category" value="No">
+            <label for="No">No</label><br>
+
+            
+
+
+            <button type="submit">Submit</button>
+
+            </form>
+            </div>
+
+            <script>
+                const scriptURL = 'https://script.google.com/'
+                const form = document.forms['google-sheet'];
+                form.addEventListener('submit',e=> {
+                    e.preventDefault()
+                    fetch(scriptURL,{method:'POST',body: new FormData(form)})
+                    .then(response => alert("Thanks for connecting"))
+                    .catch(error=>console.error('Error',error.message))
+                })
+            </script>
+        
+        <a href="index.htm">Click here to go home page</a>
+        </section>
+        
+    </body>
+</html>
